@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Егорушке </title>
+    <link rel="icon" href="favicon.ico">
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .letter {
+            width: 200px;
+            cursor: pointer;
+        }
+        
+        .message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+        
+        .show-message {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 align=center > <font color=pink  > Наведи,а затем нажми на меня!⇨ </h1> </font> 
+    <!-- Изображение письма -->
+    <img src="коныерт.webp" alt="Письмо" style="width: 1300px" class="letter" id="letter" title="Я тебя люблю!">
+    
+    <!-- Скрытое сообщение -->
+    <div class="message" id="message">Очень очень сильно!</div>
+    
+    <script>
+        // Получаем элементы
+        const letter = document.getElementById('letter');
+        const message = document.getElementById('message');
+        
+        // Добавляем обработчик события на клик по письму
+        letter.addEventListener('click', function() {
+            message.classList.add('show-message'); // Показываем сообщение
+        });
+    </script>
+</body>
+</html>
